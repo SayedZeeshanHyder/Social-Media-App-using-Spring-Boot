@@ -4,27 +4,22 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "posts")
-public class PostModel {
+@AllArgsConstructor
+@Document(collection = "friendships")
+public class FriendshipModel {
 
     @Id
-    private ObjectId id;
-    private String content;
-    private String imageUrl;
+    private String id;
+    private String userId;
+    private String friendId;
     private LocalDateTime createdAt;
-    private ObjectId userId;
-    private List<CommentsModel> comments;
-    private List<LikeModel> likes;
 
-    // Getters and Setters
 }
